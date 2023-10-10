@@ -19,7 +19,7 @@ version_flag = '-DREANIMATED_VERSION=' + reanimated_package_json["version"]
 debug_flag = is_release ? '-DNDEBUG' : ''
 
 Pod::Spec.new do |s|
-  
+
   s.name         = "RNReanimated"
   s.version      = reanimated_package_json["version"]
   s.summary      = reanimated_package_json["description"]
@@ -91,6 +91,7 @@ Pod::Spec.new do |s|
   s.dependency 'Yoga'
   s.dependency 'DoubleConversion'
   s.dependency 'glog'
+  s.dependency 'hermes-engine'
   if using_hermes && !config[:is_tvos_target] && config[:react_native_minor_version] >= 70
     s.dependency 'React-hermes'
     s.dependency 'hermes-engine'
